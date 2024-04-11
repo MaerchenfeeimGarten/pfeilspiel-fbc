@@ -56,8 +56,6 @@ RUN cp -r fb_rtlib.js fb_shell.html fbextra.x termlib_min.js js-asmjs/ /usr/loca
 
 #RUN dpkg --add-architecture i386 && apt-get update && apt-get install wine32
 
-#fbc -target js-asmjs -Wl "-s ASYNCIFY=1" program.bas
-
 WORKDIR /
 RUN rm -rf /fbc-install
 

@@ -27,5 +27,5 @@ mv "Pfeilspiel TNG international.js" ../bin/.
 cp "index.html" ../bin/.
 mv "Pfeilspiel TNG international.exe" ../bin/.
 mv "Pfeilspiel TNG international.packed" ../bin/.
-mv "PF4DOS.EXE" ../bin/.
+mv "PF4DOS.EXE" ../bin/PFEIL.EXE
 

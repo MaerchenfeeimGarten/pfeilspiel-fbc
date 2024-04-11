@@ -1,17 +1,16 @@
-# FreeBASIC in Docker
+# FreeBASIC in Docker zum Bauen von Pfeilspiel TNG international
 
-This repository contains a Dockerfile that allows you to build an Ubuntu container which includes FreeBASIC preinstalled. 
+Dieses Repository enthält eine Dockerfile sowie weitere, benötigte Daten, um das in FreeBasic programmierte ["Pfeilspiel TNG international"](https://codeberg.org/MaerchenfeeimGarten/Pfeilspiel) zu bauen. Und zwar für Windows, Linux, HTML+WASM+JS+CSS sowie DOS.
 
-It includes:
 
-  - a Linux 64bit compiler `fbc <program.bas>`
-  - a Windows 64bit compiler `wine /fbc-wine/FreeBASIC-1.10.1-winlibs-gcc-9.3.0/fbc64.exe <program.bas>`
-  - WASM/emscripten/js target compatibility `fbc -target js-asmjs -Wl "-s ASYNCIFY=1" <program.bas>`
-  - a packer to pack all the needed linux libraries into the linux binary: `packelf.sh <program.compiled> <program.compiled.packed>`
+This repository contains the Dockerfile as well as other data required to build the [Pfeilspiel TNG international"](https://codeberg.org/MaerchenfeeimGarten/Pfeilspiel) programmed in FreeBasic. It compiles for Windows, Linux, HTML+WASM+JS+CSS and DOS.
 
-To build the container:
-  - `docker build ./ -t pfeilspielcompiler`
+```
+git clone <url of this repo>
+git clone https://codeberg.org/MaerchenfeeimGarten/Pfeilspiel
+cd <nam of this repo>
+docker build -t pfeilspiel-fbc #Bauen des Containers / Build the container
+cd ../Pfeilspiel
+docker run -it -v ./:/src pfeilspiel-fbc # Nutzung des Containers zum Compilieren des Pfeilspiels / Usage of the container to compile the Pfeilspiel
 
-To run the container:
-  - `cd <path_where_the_source_code_is>`
-  - `docker run -it -v ./:/src pfeilspielcompiler`
+```
