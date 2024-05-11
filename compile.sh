@@ -28,4 +28,7 @@ cp "index.html" ../bin/.
 mv "Pfeilspiel TNG international.exe" ../bin/.
 mv "Pfeilspiel TNG international.packed" ../bin/.
 mv "PF4DOS.EXE" ../bin/PFEIL.EXE
+cp -rf ./fonts ../bin
+
+chmod -R go+rw /src/bin
 
