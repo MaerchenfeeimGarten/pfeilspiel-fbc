@@ -1,13 +1,16 @@
 #!/bin/bash
+
+ADDITIONAL_ARGUMENTS="-exx"      #see https://www.freebasic.net/wiki/ProPgErrorHandling
+
 cd /src/src
 echo "==> Target: Linux 64 <=="
-fbc "Pfeilspiel TNG international.bas"
+fbc $ADDITIONAL_ARGUMENTS "Pfeilspiel TNG international.bas"
 
 echo "==> Sub-Target: Linux 64 - packed <=="
 packelf.sh "Pfeilspiel TNG international" "Pfeilspiel TNG international.packed"
 
 echo "==> Target: Windows 64 <=="
-wine /fbc-wine/FreeBASIC-1.10.1-winlibs-gcc-9.3.0/fbc64.exe "Pfeilspiel TNG international.bas"
+wine /fbc-wine/FreeBASIC-1.10.1-winlibs-gcc-9.3.0/fbc64.exe $ADDITIONAL_ARGUMENTS  "Pfeilspiel TNG international.bas"
 
 echo "==> Target: Web aka WASM aka html <=="
 fbc -target js-asmjs -Wl "-s ASYNCIFY=1" "Pfeilspiel TNG international.bas"
@@ -21,12 +24,12 @@ rm PF4DOS.BAS
 mkdir /src/bin
 
 echo "==> Target: collect and clean up <=="
-mv "Pfeilspiel TNG international" ../bin/.
+mv "Pfeilspiel TNG international" ../bin/Pfeilspiel_TNG_international
 mv "Pfeilspiel TNG international.wasm" ../bin/.
 mv "Pfeilspiel TNG international.js" ../bin/.
 cp "index.html" ../bin/.
-mv "Pfeilspiel TNG international.exe" ../bin/.
-mv "Pfeilspiel TNG international.packed" ../bin/.
+mv "Pfeilspiel TNG international.exe" ../bin/Pfeilspiel_TNG_international.exe
+mv "Pfeilspiel TNG international.packed" ../bin/Pfeilspiel_TNG_international.packed
 mv "PF4DOS.EXE" ../bin/PFEIL.EXE
 cp -rf ./fonts ../bin
 

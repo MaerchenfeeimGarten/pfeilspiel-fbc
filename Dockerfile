@@ -24,7 +24,7 @@ WORKDIR /fbc-install/FreeBASIC-1.10.1-ubuntu-22.04-x86_64
 RUN ls -hal ; ./install.sh -i
 
 RUN apt-get update -qq \
-    && apt-get install -y xz-utils make build-essential
+  && apt-get install -y xz-utils make build-essential
 
 RUN mkdir /emsdk
 
@@ -75,8 +75,8 @@ RUN unzip /fbc-dos/FreeBASIC-1.10.1-dos.zip
 RUN rm /fbc-dos/*.zip
 RUN mv /fbc-dos/F* /fbc-dos/fbc
 
-ADD HXRT216.zip /fbc-dos/
-RUN unzip ./HXRT216.zip
+ADD cwsdpmi.zip /fbc-dos/
+RUN unzip ./cwsdpmi.zip
 
 
 
