@@ -1,3 +1,11 @@
+<!---
+#
+# SPDX-FileCopyrightText: 2023 - 2024 MaerchenfeeimGarten
+# 
+# SPDX-License-Identifier:  AGPL-3.0-only
+#
+--->
+
 # DE: FreeBASIC in Docker zum Bauen von Pfeilspiel TNG international
 # EN: FreeBASIC inside Docker for building Pfeilspiel TNG international
 
